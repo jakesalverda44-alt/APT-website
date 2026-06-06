@@ -1,0 +1,167 @@
+/* ──────────────────────────────────────────────
+   Homepage layout & components
+   Flat design — no gradients, no drop shadows.
+   ────────────────────────────────────────────── */
+
+/* 3px solid gold bar across the very top */
+.top-bar {
+  height: 3px;
+  background: var(--gold);
+}
+
+/* ───────────── Buttons ───────────── */
+.btn {
+  display: inline-block;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.btn--gold {
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 12px 24px;
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.30);
+  color: var(--white);
+  padding: 12px 24px;
+}
+
+/* ───────────── Navbar ───────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: 64px;
+  background: var(--navy);
+}
+
+.navbar__inner {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar__brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__logo {
+  height: 56px;
+  width: auto;
+}
+
+.navbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.navbar__link {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+  transition: color 0.15s ease;
+}
+
+.navbar__link:hover {
+  color: var(--white);
+}
+
+/* "Get a Bid" navbar button — uses the gold spec for the navbar (8px 18px) */
+.navbar__cta {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+}
+
+/* ───────────── Hero ───────────── */
+.hero {
+  background: var(--navy);
+  padding: 80px 0 72px;
+}
+
+.hero__eyebrow {
+  display: inline-block;
+  background: rgba(232, 184, 75, 0.12);
+  border: 1px solid rgba(232, 184, 75, 0.3);
+  color: var(--gold);
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+
+.hero__title {
+  color: var(--white);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.1;
+  max-width: 600px;
+  margin: 20px 0 0;
+}
+
+.hero__title-accent {
+  color: var(--gold);
+}
+
+.hero__subhead {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-top: 16px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+/* ───────────── Trust bar ───────────── */
+.trust-bar {
+  background: var(--navy-dark);
+  padding: 14px 0;
+}
+
+.trust-bar__inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.trust-bar__label {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.trust-bar__pill {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+/* ───────────── Responsive ───────────── */
+@media (max-width: 720px) {
+  .hero__title {
+    font-size: 34px;
+  }
+
+  .navbar__nav {
+    display: none;
+  }
+}

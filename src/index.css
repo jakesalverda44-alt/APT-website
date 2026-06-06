@@ -1,0 +1,54 @@
+/* ──────────────────────────────────────────────
+   Accurate Power & Technology — Global Styles
+   Brand colors:
+     Navy  #1B2D4F
+     Gold  #E8B84B
+     White #FFFFFF
+   Design: flat only — no gradients, no drop shadows.
+   ────────────────────────────────────────────── */
+
+:root {
+  --navy: #1B2D4F;
+  --navy-dark: #162440;
+  --gold: #E8B84B;
+  --white: #FFFFFF;
+  --muted: rgba(255, 255, 255, 0.60);
+
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: var(--navy);
+  color: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+}
+
+/* Shared centered content container */
+.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
