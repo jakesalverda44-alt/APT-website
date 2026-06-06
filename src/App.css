@@ -73,8 +73,14 @@
   transition: color 0.15s ease;
 }
 
-.navbar__link:hover {
+.navbar__link:hover,
+.navbar__link--active {
   color: var(--white);
+}
+
+.navbar__link--active {
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
 }
 
 /* "Get a Bid" navbar button — uses the gold spec for the navbar (8px 18px) */
@@ -153,6 +159,143 @@
   font-size: 12px;
   padding: 4px 14px;
   border-radius: 20px;
+}
+
+/* ───────────── Page header (inner pages) ───────────── */
+.pagehead {
+  background: var(--navy);
+  padding: 64px 0 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.pagehead__eyebrow {
+  display: inline-block;
+  background: rgba(232, 184, 75, 0.12);
+  border: 1px solid rgba(232, 184, 75, 0.3);
+  color: var(--gold);
+  font-size: 11px;
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+
+.pagehead__title {
+  color: var(--white);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 18px 0 0;
+}
+
+.pagehead__lead {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 640px;
+  margin: 16px 0 0;
+}
+
+/* ───────────── Reliability grid (home) ───────────── */
+.rely {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.rely__item {
+  border-left: 3px solid var(--gold);
+  padding: 4px 0 4px 18px;
+}
+
+.rely__title {
+  color: var(--white);
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.rely__body {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Section CTA + split columns + teaser + cta band */
+.section__cta {
+  margin-top: 36px;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.split__title {
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 18px;
+}
+
+.split__title::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 3px;
+  background: var(--gold);
+  margin-top: 10px;
+}
+
+.feature-list--single {
+  grid-template-columns: 1fr;
+}
+
+.teaser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.teaser__text {
+  flex: 1 1 420px;
+}
+
+.teaser__lead {
+  margin-bottom: 0;
+}
+
+.cta-band {
+  background: var(--gold);
+  padding: 36px 0;
+}
+
+.cta-band__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cta-band__title {
+  color: var(--navy);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.cta-band__text {
+  color: var(--navy);
+  font-size: 15px;
+  margin: 6px 0 0;
+}
+
+.cta-band .btn--gold {
+  background: var(--navy);
+  color: var(--gold);
 }
 
 /* ───────────── Stats band ───────────── */
@@ -534,9 +677,16 @@
 
 .footer__inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: 28px;
   flex-wrap: wrap;
+}
+
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .footer__logo {
@@ -552,6 +702,21 @@
   font-size: 13px;
 }
 
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer__nav a {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 13px;
+}
+
+.footer__nav a:hover {
+  color: var(--white);
+}
+
 /* ───────────── Responsive ───────────── */
 @media (max-width: 900px) {
   .cards,
@@ -563,7 +728,9 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  .about {
+  .about,
+  .rely,
+  .split {
     grid-template-columns: 1fr;
     gap: 28px;
   }
@@ -574,12 +741,17 @@
 }
 
 @media (max-width: 720px) {
-  .hero__title {
+  .hero__title,
+  .pagehead__title {
     font-size: 34px;
   }
 
   .navbar__nav {
     display: none;
+  }
+
+  .navbar__inner {
+    gap: 16px;
   }
 
   .cards,
